@@ -1,0 +1,24 @@
+[PHP ARTISAN COMMANDS]
+    php artisan serve [run the server]
+    php artisan make:component component_name [create a new component]
+    php artisan make:model mode_name --migration [create a new model]
+    php artisan migrate [execute database commands]
+    php artisan db:seed [inset demo data into the database]
+    php artisan db:seed --class=seeder_name [inset demo data into the database using one seeder]
+    php artisan make:seeder seeder_name [create a new seeder]
+    php artisan make:factory factory_mame --model=mode_name [create a new factory]
+    php artisan make:requeset request_name [create a new request class]
+    php artisan make:migration add_column_to_table_name_table --table=table_name [create a new migration:: related to database]
+    php artisan storage:link [create a symbolic link for storage on public]
+
+[CREATING A NEW SEEDER FUNCTION]
+    public function run(): void
+    {
+        DB::table('table_name')->insert([
+            'column'     => Str::random(16),
+            'column'     => Str::random(16),
+            'password'   => Hash::make('password123!')
+        ]);
+    }
+    ----------------------------------
+    model_name::factory(10)->create();
